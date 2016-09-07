@@ -1,0 +1,26 @@
+{
+  "name": "radioNode",
+  "authors": [
+    "Vicken <vicken.liu@gmail.com>"
+  ],
+  "description": "online radio player",
+  "main": "",
+  "keywords": [
+    "angular",
+    "expressJs"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "normalize-css": "normalize.css#^4.2.0"
+  }
+}
