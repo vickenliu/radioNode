@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='RadioApp'>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/main.css">
     <title>Online Radio Player</title>
+    <script type="text/javascript" src='js/main.js'></script>
   </head>
   <body>
-    <div id='title'>this is the radio type</div>
-    <script type="text/javascript" src='js/main.js'></script>
+    <header>
+      <a href="/">my heart Radio</a>
+      <div ui-view></div>
+    </header>
   </body>
 </html>

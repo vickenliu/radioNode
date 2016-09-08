@@ -15,12 +15,19 @@ var dest = '../public/';
 
 gulp.task('js', function() {
 
-	var jsFiles = ['src/js/**/*.js'];
+	var jsFiles = ['src/js/**/*.js','src/*.js'];
 
 	  gulp.src(plugins.mainBowerFiles().concat(jsFiles))
     .pipe(plugins.filter('**/*.js'))
+    .pipe(plugins.order([
+            'src/*.js',
+            'angular.js',
+            '*'
+          ]))
 		.pipe(plugins.concat('main.js'))
-		.pipe(plugins.uglify())
+    .pipe(plugins.babel({
+            presets: ['es2015']
+        }))
 		.pipe(gulp.dest(dest + 'js/'));
 
 });
