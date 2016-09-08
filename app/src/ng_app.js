@@ -13,4 +13,9 @@ var radioApp = angular.module('RadioApp', [
         templateUrl:'./views/charts.html',
         controller: 'chartCtrl'
       })
+      .state('collection', {
+        url:'/collection',
+        templateUrl:'./views/collection.html',
+        controller: 'collectionCtrl'
+      })
   })

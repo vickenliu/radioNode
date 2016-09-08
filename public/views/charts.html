@@ -1,2 +1,7 @@
-<h1>{{num}}</h1>
+<h1>{{stations}}</h1>
 <p>helo</p>
+<ul>
+  <li ng-repeat='station in stations' ng-click='stationClicked(station)'>
+    {{station.name}}
+  </li>
+</ul>

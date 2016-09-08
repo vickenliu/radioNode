@@ -20,8 +20,9 @@ gulp.task('js', function() {
 	  gulp.src(plugins.mainBowerFiles().concat(jsFiles))
     .pipe(plugins.filter('**/*.js'))
     .pipe(plugins.order([
-            'src/*.js',
-            'angular.js',
+			      'angular.js',
+            '**/ng_app.js',
+						'**/services/*.js',
             '*'
           ]))
 		.pipe(plugins.concat('main.js'))
@@ -54,6 +55,7 @@ gulp.task('css', function() {
 gulp.task('watch',function(){
   gulp.watch('src/scss/*.scss',['css'])
   gulp.watch('src/js/**/*.js',['js'])
+	gulp.watch('src/*.js',['js'])
 })
 
 gulp.task('default', ['css','js'])
