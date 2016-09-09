@@ -1,0 +1,11 @@
+<div class='stationItem__container'
+     ng-class="{ active: hover }"
+     ng-mouseover="hover = true"
+     ng-mouseleave="hover = false">
+  <span class='stationItem__button'
+        id="{{data.id}}">
+    <i class='bt bt-play'></i>
+    <i class='bt bt-pause'></i>
+  </span>
+  <h3>{{data.name}}</h3>
+</div>

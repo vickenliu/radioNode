@@ -5,7 +5,7 @@ radioApp.controller('chartCtrl', ($scope,radioService) => {
   radioService.getTop20Stations().then((data)=>{
     $scope.stations = data ;
   })
-  
+
   $scope.stationClicked = (station)=>{
     radioService.getStreamUrl(station.id)
         // get the streaming url
@@ -18,6 +18,7 @@ radioApp.controller('chartCtrl', ($scope,radioService) => {
         })
         .then((stremUrl)=>{
           const radio = document.getElementById('radio')
+          radio.pause();
           radio.setAttribute('src', stremUrl);
           radio.play();
         })

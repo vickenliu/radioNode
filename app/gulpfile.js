@@ -17,20 +17,21 @@ gulp.task('js', function() {
 
 	var jsFiles = ['src/js/**/*.js','src/*.js'];
 
-	  gulp.src(plugins.mainBowerFiles().concat(jsFiles))
+	  gulp.src(plugins.mainBowerFiles())
     .pipe(plugins.filter('**/*.js'))
-    .pipe(plugins.order([
-			      'angular.js',
-            '**/ng_app.js',
-						'**/services/*.js',
-            '*'
-          ]))
+		.pipe(plugins.concat('vendor.js'))
+		.pipe(gulp.dest(dest + 'js/'));
+
+		gulp.src(jsFiles)
+		.pipe(plugins.order([
+						'ng_app.js',
+						'*'
+					]))
 		.pipe(plugins.concat('main.js'))
     .pipe(plugins.babel({
             presets: ['es2015']
         }))
 		.pipe(gulp.dest(dest + 'js/'));
-
 });
 
 gulp.task('css', function() {

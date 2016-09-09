@@ -4,7 +4,7 @@ radioApp.service('radioService', ($http,$q) => {
 
   return {
     getTop20Stations : () => {
-      const url = '/proxy?url='+'http://api.shoutcast.com/legacy/Top500?k=QVmydVad1rTssRzC&limit=5';
+      const url = '/proxy?url=http://api.shoutcast.com/legacy/Top500?k=QVmydVad1rTssRzC&limit=20';
 
       return $http({url}).then((response)=>{
         const stations = $(response.data).find('station').map((i,station)=>{

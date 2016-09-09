@@ -2,15 +2,18 @@
 <html ng-app='RadioApp'>
   <head>
     <meta charset="utf-8">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/main.css">
     <title>Online Radio Player</title>
-    <script type="text/javascript" src='js/main.js'></script>
   </head>
   <body>
     <header>
       <a href="/">my heart Radio</a>
     </header>
-    <div ui-view></div>
+    <div ui-view class='row'></div>
     <audio src="" id='radio'></audio>
+
+    <script type="text/javascript" src='js/vendor.js'></script>
+    <script type="text/javascript" src='js/main.js'></script>
   </body>
 </html>

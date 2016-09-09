@@ -34,7 +34,7 @@ app.get('/proxy',function(req, res){
       }
     });
     request(req.query.url, function(error,response){
-      if(response.statusCode){
+      if(response.statusCode == 200 && !error){
         console.log(response.body)
         res.send(response.body)
       }
