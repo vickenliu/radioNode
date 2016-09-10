@@ -2,9 +2,8 @@
   <h1>Top {{stations.length}} radio stations</h1>
   <ul class='col-md-8 col-md-offset-2 station__lists'>
     <li ng-repeat='station in stations'
-        ng-click='stationClicked(station)'
         class='col-md-3 station__listItem'>
-      <station data='station' />
+      <station data='station' vicken='yes'/>
     </li>
   </ul>
 </div>

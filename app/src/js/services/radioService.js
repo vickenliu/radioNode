@@ -21,7 +21,13 @@ radioApp.service('radioService', ($http,$q) => {
    getStreamUrl : (id) => {
      const url = '/proxy?url=http://yp.shoutcast.com/sbin/tunein-station.m3u?id='+id;
 
-     return $http( { url } );
+     return $http( { url } ).then((response)=>{
+       const arr = response.data.split('#'),
+             l   = arr.length,
+             index = arr[l-1].indexOf('http');
+             console.log('playing1')
+       return arr[l-1].substr(index)
+     });
    }
 
   }
