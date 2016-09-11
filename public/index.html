@@ -9,8 +9,18 @@
   <body>
     <header>
       <a href="/">my heart Radio</a>
+      <input type="text" ng-modal='keyword'>
     </header>
-    <div ui-view class='row'></div>
+    <div class='row'>
+      <aside class="leftSide__bar col-md-2">
+        <u>
+          <li><a ui-sref='home'>Top 20s</a></li>
+          <li><a ui-sref='collection'>My collection</a></li>
+          <li>Music</li>
+        </u>
+      </aside>
+          <div ui-view class='col-md-10'></div>
+    </div>
     <audio src="" id='radio'></audio>
 
     <script type="text/javascript" src='js/vendor.js'></script>

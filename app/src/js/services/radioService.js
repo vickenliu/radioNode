@@ -1,11 +1,11 @@
 
 
-radioApp.service('radioService', ($http,$q) => {
+radioApp.service('radioService', ($http,$q,$rootScope) => {
 
   return {
     getTop20Stations : () => {
       const url = '/proxy?url=http://api.shoutcast.com/legacy/Top500?k=QVmydVad1rTssRzC&limit=20';
-
+      $rootScope.isloading = true;
       return $http({url}).then((response)=>{
         const stations = $(response.data).find('station').map((i,station)=>{
           return {
@@ -25,7 +25,6 @@ radioApp.service('radioService', ($http,$q) => {
        const arr = response.data.split('#'),
              l   = arr.length,
              index = arr[l-1].indexOf('http');
-             console.log('playing1')
        return arr[l-1].substr(index)
      });
    }
