@@ -11,7 +11,15 @@ var radioApp = angular.module('RadioApp', [
       .state('home', {
         url:'/',
         templateUrl:'./views/charts.html',
-        controller: 'chartCtrl'
+        controller: 'chartCtrl',
+        resolve: {
+          stations: (radioService,$rootScope)=>{
+            return radioService.getTop20Stations().then((data)=>{
+              $rootScope.isloading = false;
+              return data ;
+            })
+          }
+        }
       })
       .state('collection', {
         url:'/collection',

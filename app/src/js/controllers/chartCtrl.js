@@ -1,14 +1,8 @@
 
 radioApp.controller('chartCtrl', ($scope,
-                                  radioService,
                                   playService,
-                                  $rootScope) => {
-  $scope.stations = [];
-
-  radioService.getTop20Stations().then((data)=>{
-    $scope.stations = data ;
-    $rootScope.isloading = false;
-  })
+                                  stations) => {
+  $scope.stations = stations;
 
   console.log(playService.getCurrentStation())
 })
