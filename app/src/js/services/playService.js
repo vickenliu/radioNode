@@ -9,6 +9,7 @@ radioApp.service('playService',(radioService)=>{
       playPromise.then(function() {
         // Automatic playback started!
         console.log('playing start')
+        $('.mediaplayer_toggle-button').click();
       }).catch(function(error) {
         // Automatic playback failed.
         // Show a UI element to let the user manually start playback.
@@ -21,7 +22,6 @@ radioApp.service('playService',(radioService)=>{
   return {
     currentStationId: 'hi',
     getCurrentStation: ()=>{
-      console.log('this is self',self)
       return self.currentStationId;
     },
     stationClicked: (id)=>{
