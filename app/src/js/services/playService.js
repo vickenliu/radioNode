@@ -4,8 +4,8 @@ radioApp.service('playService',(radioService,
   // helper function
   const playStream = (url)=>{
     const radio = document.getElementById('radio')
-    radio.pause();
     radio.setAttribute('src', url);
+
     const playPromise = radio.play();
     if (playPromise !== undefined) {
       playPromise.then(function() {

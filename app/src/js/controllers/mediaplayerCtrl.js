@@ -1,14 +1,14 @@
-radioApp.controller('mediaplayerCtrl', ($scope)=>{
-  $scope.buttonStatus='pause';
+radioApp.controller('mediaplayerCtrl', ($scope, $rootScope)=>{
+  $rootScope.buttonStatus='pause';
 
   const radio = document.getElementById('radio')
 
   $scope.buttonClicked = ()=>{
-    if($scope.buttonStatus === 'pause'){
-      $scope.buttonStatus='play';
+    if($rootScope.buttonStatus === 'pause'){
+      $rootScope.buttonStatus='play';
       radio.play();
     }else{
-      $scope.buttonStatus='pause';
+      $rootScope.buttonStatus='pause';
       radio.pause();
     }
   }
