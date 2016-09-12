@@ -1,4 +1,6 @@
-radioApp.service('playService',(radioService)=>{
+radioApp.service('playService',(radioService,
+                                mediaService,
+                                $rootScope)=>{
   // helper function
   const playStream = (url)=>{
     const radio = document.getElementById('radio')
@@ -9,7 +11,8 @@ radioApp.service('playService',(radioService)=>{
       playPromise.then(function() {
         // Automatic playback started!
         console.log('playing start')
-        $('.mediaplayer_toggle-button').click();
+        mediaService.updateMediaUI()
+
       }).catch(function(error) {
         // Automatic playback failed.
         // Show a UI element to let the user manually start playback.
@@ -25,7 +28,7 @@ radioApp.service('playService',(radioService)=>{
       return self.currentStationId;
     },
     stationClicked: (id)=>{
-      self.currentStationId= id;
+      $rootScope.currentStationId= id;
       radioService.getStreamUrl(id)
                   .then(playStream)
     }
