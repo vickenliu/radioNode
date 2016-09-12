@@ -12,4 +12,16 @@ radioApp.controller('mediaplayerCtrl', ($scope, $rootScope)=>{
       radio.pause();
     }
   }
+
+  if(window.localStorage.volume){
+    radio.volume =  window.localStorage.volume;
+    $scope.volume = window.localStorage.volume;
+  }
+
+  $scope.adjustVolum = (volume)=>{
+    if(volume){
+      radio.volume = parseFloat(volume).toFixed(1);
+      window.localStorage.volume = parseFloat(volume).toFixed(1);
+    }
+  }
 })
