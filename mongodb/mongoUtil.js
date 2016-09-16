@@ -1,9 +1,10 @@
+'user strict'
 
-var mongo = request('mongodb')
+var mongo = require('mongodb')
 var mongoClient= mongo.MongoClient;
 var _db;
 
-export module ={
+module.exports ={
   connect(database) {
     var url = 'mongodb://localhost:27017/'+database
     mongoClient.connect(url, function(err, db){
@@ -17,6 +18,6 @@ export module ={
     })
   },
   getCollection(colletionName) {
-    return _db.colletion(colletionName)
+    return _db.collection(colletionName)
   }
 }

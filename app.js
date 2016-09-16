@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var collections = require('./routes/collection');
 
 var app = express();
 var request = require('request');
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/collections', collections);
 
 app.get('/proxy',function(req, res){
   if(req.query.url){
