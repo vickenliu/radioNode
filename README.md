@@ -14,8 +14,8 @@ cd radioNode
 # Install dependencies
 npm install
 
-# run and watch for changes in .ts files
-npm start
+# start the server and watch server files
+npm run dev
 
 # Applciation url: http://localhost:3000
 ```
