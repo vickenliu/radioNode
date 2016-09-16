@@ -17,13 +17,20 @@ var radioApp = angular.module('RadioApp', [
             return radioService.getTop20Stations().then((data)=>{
               $rootScope.isloading = false;
               return data ;
-            })
+            });
           }
         }
       })
       .state('collection', {
         url:'/collection',
         templateUrl:'./views/collection.html',
-        controller: 'collectionCtrl'
+        controller: 'collectionCtrl',
+        resolve: {
+          collections: (localApiService)=>{
+            return localApiService.getCollections().then((response)=>{
+              return response.data;
+            })
+          }
+        }
       })
   })

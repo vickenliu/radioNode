@@ -1,4 +1,5 @@
 
-radioApp.controller('collectionCtrl', ($scope) => {
-  $scope.num = 23;
+radioApp.controller('collectionCtrl', ($scope,
+                                       collections) => {
+  $scope.collections = collections;
 })
