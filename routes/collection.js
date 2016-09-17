@@ -9,7 +9,7 @@ mongo.connect('radio');
 router.get('/', function(req, res, next) {
   // get radio collections
   var collections = mongo.getCollection('radio')
-  
+
   collections.find().toArray(function(err, docs){
     if(err){
       res.sendStatus(400);
