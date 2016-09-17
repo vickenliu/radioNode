@@ -4,7 +4,7 @@ radioApp.directive('stream', (playService, $rootScope) => {
         restrict: 'A',
         link: ($scope, elem, attrs )=>{
             elem.bind('click', function () {
-                playService.stationClicked(attrs.id)
+                playService.stationClicked(attrs);
                 $rootScope.buttonStatus = 'pause';
                 $('.currentStation').removeClass('currentStation');
                 $(this).parent('div').addClass('currentStation');

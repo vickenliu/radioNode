@@ -24,14 +24,21 @@ radioApp.service('playService',(radioService,
 
   return {
     currentStationId: 'hi',
+
     getCurrentStation: ()=>{
       return self.currentStationId;
     },
-    stationClicked: (id)=>{
-      $rootScope.currentStationId= id;
-      radioService.getStreamUrl(id)
-                  .then(playStream)
+
+    stationClicked: (attrs)=>{
+      $rootScope.currentStationId= attrs.id;
+      if(attrs.streamurl){
+        playStream(attrs.streamurl)
+      }else{
+        radioService.getStreamUrl(attrs.id)
+                    .then(playStream)
+      }
     }
+
   }
 
 })
