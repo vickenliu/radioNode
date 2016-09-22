@@ -4,11 +4,14 @@
      ng-mouseleave="hover = false">
   <span class='stationItem__button'
         stream
-        id="{{data.id}}"
+        id="{{data.id || data._id}}"
         data-streamUrl='{{data.url}}'
         data-name='{{data.name}}'>
     <i class='bt bt-play'></i>
     <i class='bt bt-pause'></i>
   </span>
+  <div>
+
+  </div>
   <h3>{{data.name}}</h3>
 </div>

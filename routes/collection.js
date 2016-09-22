@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
     if(err){
       res.sendStatus(400);
     }else{
+      console.log('from mongo',docs)
       res.json(docs);
     }
   })
