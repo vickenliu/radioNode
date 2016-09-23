@@ -4,7 +4,7 @@ radioApp.service('mediaService',($rootScope)=>{
         currentTime = $('.mediaplayer_current-time'),
         stationName = $('.mediaplayer_radio-name');
   return {
-    updateMediaUI: ()=>{
+     updateMediaUI: ()=>{
         toggleButton.click();
         $rootScope.currentStationId ? stationName.text($('#'+$rootScope.currentStationId).data('name')) :
                                       stationName.text('radio name');
@@ -18,6 +18,11 @@ radioApp.service('mediaService',($rootScope)=>{
           }
 
       });
+    },
+    updateActiveStation: (elem,id)=>{
+      if(id == $rootScope.currentStationId){
+        $(elem).parent('div').addClass('currentStation');
+      }
     }
   }
 })
