@@ -14,6 +14,9 @@ cd radioNode
 # Install dependencies
 npm install
 
+# run mongoDB
+mongod
+
 # start the server and watch server files
 npm run dev
 
