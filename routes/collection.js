@@ -1,16 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var mongo = require('../mongodb/mongoUtil')
+var radios = require('../models/radio')
 
-// establish connection to mongodb
-mongo.connect('radio');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // get radio collections
-  var collections = mongo.getCollection('radio')
-
-  collections.find().toArray(function(err, docs){
+  radios.model.find().exec(function(err, docs){
     if(err){
       res.sendStatus(400);
     }else{
