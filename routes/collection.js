@@ -1,12 +1,13 @@
+var db = require('../config/mongoose')();
 var express = require('express');
 var router = express.Router();
-var radios = require('../models/radio')
+var Radio = require('mongoose').model('Radio');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // get radio collections
-  radios.model.find().exec(function(err, docs){
+  Radio.find().exec(function(err, docs){
     if(err){
       res.sendStatus(400);
     }else{
