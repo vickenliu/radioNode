@@ -1,4 +1,3 @@
-var db = require('../config/mongoose')();
 var express = require('express');
 var router = express.Router();
 var Radio = require('mongoose').model('Radio');
