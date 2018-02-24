@@ -9,6 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  img {
+    max-height: 65px;
+    border-radius: 50%;
+  }
 }
 .btn.mediaplayer_toggle-button{
   height: 50px;

@@ -2,6 +2,11 @@
   height: 200px;
   margin-top: 15px;
 }
-ul {
-  list-style: none;
+
+.list-body {
+  padding-top: 15px;
+  margin-bottom: 70px;
+  .list-title {
+    margin-left: 30px;
+  }
 }

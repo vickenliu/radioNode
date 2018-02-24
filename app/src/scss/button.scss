@@ -1,5 +1,10 @@
 *{
   box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+ul {
+  list-style: none;
+  padding: 0
 }
 @import "charts.scss";
 @import "station.scss";
@@ -9,4 +14,43 @@
 #title{
   color: pink;
   font-size: 2em;
+}
+#logo {
+  font-size: 27px;
+}
+.ng-view {
+  float: right;
+}
+
+.leftSide__bar {
+  height: 100vh;
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  text-align: center;
+  li {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.2em;
+    &:hover, &.active{
+      opacity: 0.8;
+      background: #4e4949;
+    }
+  }
+  a {
+    color: white;
+  }
+}
+.maindbody input {
+  height: 48px;
+  width: 15%;
+  padding-left: 10px;
+  font-size: 18px;
+  position: absolute;
+  right: -4px;
+  top: 16px;
 }
