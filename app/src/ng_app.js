@@ -13,11 +13,14 @@ var radioApp = angular.module('RadioApp', [
         templateUrl:'./views/charts.html',
         controller: 'chartCtrl',
         resolve: {
-          stations: (radioService,$rootScope)=>{
-            return radioService.getTop20Stations().then((data)=>{
-              $rootScope.isloading = false;
-              return data ;
-            });
+          stations: (radioService, $rootScope)=>{
+            return $rootScope.stations ? 
+                   Promise.resolve($rootScope.stations) : 
+                   radioService.getTop20Stations().then((data)=>{
+                     $rootScope.isloading = false;
+                     $rootScope.stations = data;
+                     return data ;
+                   });
           }
         }
       })
@@ -26,10 +29,13 @@ var radioApp = angular.module('RadioApp', [
         templateUrl:'./views/collection.html',
         controller: 'collectionCtrl',
         resolve: {
-          collections: (localApiService)=>{
-            return localApiService.getCollections().then((response)=>{
-              return response.data;
-            })
+          collections: (localApiService, $rootScope)=>{
+            return $rootScope.collections ? 
+                  Promise.resolve($rootScope.collections) : 
+                  localApiService.getCollections().then((response)=>{
+                      $rootScope.collections = response.data; 
+                      return response.data;
+                  })
           }
         }
       })

@@ -10,11 +10,7 @@ radioApp.directive('stream', (playService,
             elem.bind('click', function () {
                 playService.stationClicked(attrs);
                 $rootScope.buttonStatus = 'pause';
-                $('.currentStation').removeClass('currentStation');
-                $(this).parent('div').addClass('currentStation');
             });
-            // when routing, activate the playing station
-            mediaService.updateActiveStation(elem, attrs.id);
         }
     }
 });

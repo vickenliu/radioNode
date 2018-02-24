@@ -18,11 +18,6 @@ radioApp.service('mediaService',($rootScope)=>{
           }
 
       });
-    },
-    updateActiveStation: (elem,id)=>{
-      if(id == $rootScope.currentStationId){
-        $(elem).parent('div').addClass('currentStation');
-      }
     }
   }
 })

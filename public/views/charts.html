@@ -3,7 +3,7 @@
   <ul class='col-md-12 station__lists'>
     <li ng-repeat='station in stations'
         class='col-md-3 station__listItem'>
-      <station data='station' />
+      <station data='station' current="{id: currentStationId, status: buttonStatus}"/>
     </li>
   </ul>
 </div>

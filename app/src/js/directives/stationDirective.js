@@ -2,7 +2,8 @@ radioApp.directive('station',()=>{
   return {
     restrict: 'AE',
     scope: {
-      data: '='
+      data: '=',
+      current: '='
     },
     templateUrl: "./views/station.html"
   };
