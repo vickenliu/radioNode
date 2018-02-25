@@ -112,7 +112,7 @@ radioApp.service('localApiService', function ($http) {
   return {
     getCollections: function getCollections() {
       return $http({
-        url: 'http://localhost:3000/collections'
+        url: '/collections'
       });
     }
   };
