@@ -376,6 +376,61 @@ ul {
   list-style: none;
   padding: 0; }
 
+header {
+  display: none;
+  background: black; }
+  header ul {
+    width: 100%;
+    height: 50px; }
+    header ul li {
+      display: inline-block;
+      float: left;
+      width: 49%;
+      height: 100%;
+      text-align: center; }
+      header ul li a {
+        height: inherit;
+        font-size: 20px;
+        color: white; }
+  header #mobileMenu > a.nav-link:hover {
+    background-color: tranparent; }
+
+#title {
+  color: pink;
+  font-size: 2em; }
+
+#logo {
+  font-size: 27px; }
+
+.leftSide__bar {
+  height: 100vh;
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  text-align: center; }
+  .leftSide__bar li {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.2em; }
+    .leftSide__bar li:hover, .leftSide__bar li.active {
+      opacity: 0.8;
+      background: #4e4949; }
+  .leftSide__bar a {
+    color: white; }
+
+.maindbody input {
+  height: 48px;
+  width: 15%;
+  padding-left: 10px;
+  font-size: 18px;
+  position: absolute;
+  right: -4px;
+  top: 16px; }
+
 .station__listItem {
   height: 200px;
   margin-top: 15px; }
@@ -385,6 +440,9 @@ ul {
   margin-bottom: 70px; }
   .list-body .list-title {
     margin-left: 30px; }
+
+.ng-view {
+  float: right; }
 
 .stationItem__container {
   width: 100%;
@@ -400,7 +458,7 @@ ul {
 .stationItem__button {
   width: 100%;
   height: 100%;
-  display: none; }
+  display: block; }
 
 .stationItem__container.active .stationItem__button, .currentStation .stationItem__button {
   display: block;
@@ -463,41 +521,41 @@ ul {
     margin-left: 2px;
     background: white; }
 
-#title {
-  color: pink;
-  font-size: 2em; }
-
-#logo {
-  font-size: 27px; }
-
-.ng-view {
-  float: right; }
-
-.leftSide__bar {
-  height: 100vh;
-  background: black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0;
-  text-align: center; }
-  .leftSide__bar li {
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 1.2em; }
-    .leftSide__bar li:hover, .leftSide__bar li.active {
-      opacity: 0.8;
-      background: #4e4949; }
-  .leftSide__bar a {
-    color: white; }
-
-.maindbody input {
-  height: 48px;
-  width: 15%;
-  padding-left: 10px;
-  font-size: 18px;
-  position: absolute;
-  right: -4px;
-  top: 16px; }
+@media (max-width: 600px) {
+  .leftSide__bar {
+    display: none;
+    left: -10000; }
+  header {
+    display: block; }
+  .ng-view {
+    float: none; }
+  .station__listItem {
+    height: 50px; }
+  .stationItem__container {
+    position: relative; }
+    .stationItem__container h3 {
+      position: relative;
+      top: -8px;
+      left: 0; }
+  .stationItem__button {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    background-color: transparent; }
+  .stationItem__container.active .stationItem__button {
+    background-color: transparent;
+    background-image: none; }
+  .currentStation .stationItem__button {
+    background-color: rgba(20, 20, 100, 0.8); }
+  .stationItem__container.active.currentStation .stationItem__button {
+    background-color: rgba(20, 20, 100, 0.8);
+    background-image: url("/images/bits.png"); }
+  input[name='volume_value'] {
+    display: none; }
+  .mediaplayer_container {
+    height: 86px; }
+  .stack-box {
+    display: block; }
+    .stack-box span {
+      text-align: center;
+      display: block; } }

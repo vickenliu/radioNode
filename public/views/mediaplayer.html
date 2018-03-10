@@ -1,12 +1,16 @@
 <div class="mediaplayer_container">
   <img src="/images/icon.png" alt="radio station icon" class='mediaplayer_radio-icon'>
-  <span class='mediaplayer_radio-name'>Vicken's Radio</span>
+  <span class='mediaplayer_radio-name hidden-xs'>Vicken's Radio</span>
   <div class='btn mediaplayer_toggle-button'
         ng-class="{btn_play : buttonStatus == 'play',btn_pause : buttonStatus == 'pause'}"
         ng-click='buttonClicked()'>
     <div class='mediaplayer_button-icon'></div>
   </div>
-  <span class='mediaplayer_current-time'>time</span>
+  <span class='mediaplayer_current-time hidden-xs'>time</span>
+  <div class='visible-xs stack-box'>
+    <span class='mediaplayer_radio-name'>Vicken's Radio</span>
+    <span class='mediaplayer_current-time'>time</span>
+  </div>
   <div class="mediaplayer_volume">
     <i class='mediaplayer_volume-icon'></i>
     <input type="range" name="volume_value" min='0.0' max='1'

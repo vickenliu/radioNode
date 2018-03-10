@@ -6,20 +6,35 @@ ul {
   list-style: none;
   padding: 0
 }
-@import "charts.scss";
-@import "station.scss";
-@import "mediaplayer.scss";
-
-
+header {
+  display: none;
+  background: black;
+  ul {
+    width: 100%;
+    height: 50px;
+    li {
+      display: inline-block;
+      float: left;
+      width: 49%;
+      height: 100%;
+      text-align: center;
+      a {
+        height: inherit;
+        font-size: 20px;
+        color: white;
+      }
+    }
+  }
+  #mobileMenu > a.nav-link:hover {
+    background-color: tranparent;
+  }
+}
 #title{
   color: pink;
   font-size: 2em;
 }
 #logo {
   font-size: 27px;
-}
-.ng-view {
-  float: right;
 }
 
 .leftSide__bar {
@@ -45,6 +60,17 @@ ul {
     color: white;
   }
 }
+
+@mixin leftSide_bar--sm() {
+  .leftSide__bar {
+    display: none;
+    left: -10000;
+  }
+  header {
+    display: block;
+  }
+}
+
 .maindbody input {
   height: 48px;
   width: 15%;
@@ -54,3 +80,8 @@ ul {
   right: -4px;
   top: 16px;
 }
+
+@import "charts.scss";
+@import "station.scss";
+@import "mediaplayer.scss";
+@import "media_query.scss";

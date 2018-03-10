@@ -1,0 +1,10 @@
+// small screen size (sm)
+@media (max-width: 600px) {
+    @include leftSide_bar--sm();
+    @include chart--sm();
+    @include station--sm();
+    @include mediaplayer--sm();
+}
+// medium screen size (md)
+@media (min-width: 992px) {
+}

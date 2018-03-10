@@ -48,3 +48,19 @@
     }
   }
 }
+
+@mixin mediaplayer--sm() {
+  input[name='volume_value'] {
+    display: none;
+  }
+  .mediaplayer_container {
+    height: 86px;
+  }
+  .stack-box {
+    display: block;
+    span {
+      text-align: center;
+      display: block;
+    }
+  }
+}

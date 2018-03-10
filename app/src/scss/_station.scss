@@ -13,7 +13,7 @@
 .stationItem__button{
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
 }
 .stationItem__container.active, .currentStation{
   .stationItem__button{
@@ -33,5 +33,39 @@
     .stationItem__button{
       background-image: url('/images/play.png');
     } 
+  }
+}
+
+@mixin station--sm() {
+  .stationItem__container {
+    position: relative;
+    h3 {
+      position: relative;
+      top: -8px;
+      left: 0;
+    }
+  }
+  .stationItem__button{
+    display: block;
+    position:absolute;
+    z-index: 100;
+    background-color: transparent;
+  }
+  .stationItem__container.active{
+    .stationItem__button{
+      background-color: transparent;
+      background-image: none;
+    }
+  }
+  .currentStation{
+    .stationItem__button{
+      background-color: rgba(20, 20, 100, 0.8);
+    }
+  }
+  .stationItem__container.active.currentStation{
+    .stationItem__button{
+      background-color: rgba(20, 20, 100, 0.8);
+      background-image: url('/images/bits.png');
+    }
   }
 }
