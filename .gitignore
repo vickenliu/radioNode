@@ -3,3 +3,4 @@ app/bower_components
 app/npm-debug.log
 npm-debug.log
 data
+config/development.js
