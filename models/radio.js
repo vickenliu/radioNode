@@ -10,6 +10,9 @@ let RadioSchema = new Schema({
     createdTime: {type: String, default: Date.now}
 });
 
-mongoose.model('Radio', RadioSchema)
+module.exports = {
+    model: mongoose.model('Radio', RadioSchema)
+}
+
 
 

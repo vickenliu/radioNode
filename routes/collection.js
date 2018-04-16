@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Radio = require('mongoose').model('Radio');
+var Radio = require('../models/radio').model;
 
 
 /* GET home page. */

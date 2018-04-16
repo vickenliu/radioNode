@@ -1,7 +1,12 @@
 
 'use strict'
-let db = require('../config/mongoose')();
-let Radio = require('mongoose').model('Radio');
+const mongoose = require('mongoose');
+const config = require(`../config/${process.env.NODE_ENV || "development"}.json`);
+mongoose.connect(config.mongodb.url, {
+    user: config.mongodb.username, 
+    pass: config.mongodb.password
+  })
+let Radio = require('../models/radio').model;
 
 let async = require('async');
 

@@ -126,9 +126,8 @@ radioApp.service('mediaService', function ($rootScope) {
   return {
     updateMediaUI: function updateMediaUI() {
       toggleButton.click();
-      $rootScope.currentStationId ? stationName.text($('#' + $rootScope.currentStationId).data('name')) : stationName.text('radio name');
+      stationName.text($rootScope.currentStationId ? $('#' + $rootScope.currentStationId).data('name') : "Vicken's Radio");
       $(radio).bind('timeupdate', function () {
-
         var mins = Math.floor(radio.currentTime / 60, 10);
         var secs = Math.floor(radio.currentTime, 10) - mins * 60;
 
