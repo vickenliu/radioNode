@@ -36,8 +36,8 @@ Radio.find({}).remove((err) => {
             console.log('radio added' + sample.name);
             cb()
         });
-    }, (err) => {
-        console.log('Finished adding all samples');
+    }, (error) => {
+        console.log(error ? error : 'Finished adding all samples');
         process.exit();
     })
 })
