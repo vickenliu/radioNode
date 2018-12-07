@@ -4,9 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const config = require(`./config/${process.env.NODE_ENV || "development"}.json`);
+const config = require('./config/development.json');
 const mongoose = require('mongoose');
 const request = require('request');
+
+if (process.env.NODE_ENV) {
+  config.mongodb = {
+    url: process.env.MONGODB_URL,
+    user: process.env.MONGODB_USER,
+    pass: process.env.MONGODB_PWD,
+  }
+}
+
 // establish db connection
 mongoose.connect(config.mongodb.url, {
   user: config.mongodb.username, 
