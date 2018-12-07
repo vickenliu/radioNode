@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const config = require(`./config/${process.env.NODE_ENV || "development"}.json`);
 const mongoose = require('mongoose');
+const request = require('request');
 // establish db connection
 mongoose.connect(config.mongodb.url, {
   user: config.mongodb.username, 
@@ -17,7 +18,6 @@ var users = require('./routes/users');
 var collections = require('./routes/collection');
 
 var app = express();
-var request = require('request');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +46,8 @@ app.get('/proxy',function(req, res){
       if(response.statusCode == 200 && !error){
         console.log(response.body)
         res.send(response.body)
+      } else {
+        res.status(500).send('please try again later');
       }
     })
   }else{

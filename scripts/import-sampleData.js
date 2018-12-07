@@ -2,6 +2,8 @@
 'use strict'
 const mongoose = require('mongoose');
 const config = require(`../config/${process.env.NODE_ENV || "development"}.json`);
+
+mongoose.Promise = Promise;
 mongoose.connect(config.mongodb.url, {
     user: config.mongodb.username, 
     pass: config.mongodb.password
@@ -13,7 +15,7 @@ let async = require('async');
 
 const samples =[{
     name: 'Gaydio UK',
-    url: 'http://uklisten1.gaydio.co.uk:8001/gaydio_high'
+    url: 'http://stream.gaydio.co.uk/gaydiouk.mp3'
 },
 {
     name: 'Joy AU',
