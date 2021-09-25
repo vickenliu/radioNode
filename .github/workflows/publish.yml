@@ -20,5 +20,5 @@ jobs:
       - name: pull latest on server
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "cd radioNode/ && git pull origin master -s recursive -X theirs && npm install && exit"
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "cd radioNode/ && git pull origin master -s recursive -X theirs && exit"
           
