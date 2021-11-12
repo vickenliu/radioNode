@@ -28,7 +28,7 @@ jobs:
         if: contains(github.event.head_commit.message, 'PUSH_IMAGE')
         run: |
           pwd
-          ls
+          cd ../ && ls
           # docker build -f  -t ${{ secrets.REGISTRY_SERVER }}/vickenradio:latest
           # docker push ${{ secrets.REGISTRY_SERVER }}/vickenradio:latest
 
