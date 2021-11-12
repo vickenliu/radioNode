@@ -16,6 +16,20 @@ jobs:
     name: Publish website
     runs-on: ubuntu-latest
     steps:
+      - name: Login to Azure registry
+        if: contains(github.event.head_commit.message, 'PUSH_IMAGE')
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Push to Azure registry
+        if: contains(github.event.head_commit.message, 'PUSH_IMAGE')
+        run: |
+          docker build . -t ${{ secrets.REGISTRY_SERVER }}:latest
+          docker push ${{ secrets.REGISTRY_SERVER }}:latest
+          
       - uses: actions/checkout@v2 
       - name: pull latest on server
         run: |
