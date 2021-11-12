@@ -2,7 +2,9 @@
   "name": "radioNode",
   "version": "0.0.0",
   "private": true,
-  "engines" : { "node" : "v8.0.0" },
+  "engines": {
+    "node": "v8.0.0"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",

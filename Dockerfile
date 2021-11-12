@@ -1,6 +1,6 @@
 
 # Pull base image
-FROM node:8-alpine
+FROM node:8
 
 WORKDIR /project
 COPY package.json package-lock.json ./
